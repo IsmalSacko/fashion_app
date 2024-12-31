@@ -1,6 +1,9 @@
 # fashio_app
 
-A new Flutter project.
+Une application de vente de téléphones mobiles en ligne au Mali.
+Cette application est un projet de fin de formation en Flutter.
+Elle est réalisée SACKO ISMAËL, étudiant en informatique à l'Université de LYON 2 en France. 
+
 
 ## Getting Started
 [test](test)

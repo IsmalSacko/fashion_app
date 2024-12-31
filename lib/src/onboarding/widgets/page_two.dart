@@ -16,15 +16,16 @@ class PageTwo extends StatelessWidget {
         height: ScreenUtil().screenHeight,
         child: Stack(
           children: [
-
-            Center(
-                heightFactor: 0.9,
+            Positioned(
+                top: 100, // Ajustez cette valeur pour décaler l'image
+                left: 30,
+                right: 30,
                 child: Image.asset(
                 R.ASSETS_IMAGES_WISHLIST_PNG
-                ,fit: BoxFit.cover,height: ScreenUtil().screenHeight *2.9,
-                  width: ScreenUtil().screenWidth * 2.9,) ),
+                ,fit: BoxFit.cover,height: ScreenUtil().screenHeight * 0.5,
+                  width: ScreenUtil().screenWidth ) ),
             Positioned(
-                bottom: 70,
+                bottom: 100,
                 left: 30,
                 right: 30,
                 child: Text(
