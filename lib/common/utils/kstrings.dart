@@ -69,6 +69,9 @@ class AppText {
       "Welcome to the ultimate fashion destination! Discover trends,"
       " shop your favorite styles, and elevate your wardrobe. Let's get started "
       "on your stylish journey today";
+
+  static String kTermsAndConditions =
+      'Our comprehensive Terms & Conditions document serves as the foundation for using our fashion app. It outlines the legal framework governing your interaction with our platform and its services. This document details important aspects like user conduct, payment terms, intellectual property rights, limitations of liability, and dispute resolution procedures. By using our app, you agree to these terms.  Therefore, we strongly encourage you to take the time to review them thoroughly.  For your convenience, we have made the Terms & Conditions easily accessible within the app.  This ensures you have a clear understanding of your rights and responsibilities as a user promoting a smooth and enjoyable shopping experience for you';
 }
 
 // Your Wishlist awaits! Curate your dream looks and save favorites for later. It's the first step to making style aspirations a reality

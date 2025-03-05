@@ -10,6 +10,7 @@ import 'package:mobile_shop/common/widgets/reusable_text.dart';
 import 'package:mobile_shop/const/constants.dart';
 import 'package:mobile_shop/src/products/controllers/product_notifier.dart';
 import 'package:mobile_shop/src/products/views/expandable_text.dart';
+import 'package:mobile_shop/src/products/views/similair_products.dart';
 import 'package:provider/provider.dart';
 
 class ProductPage extends StatelessWidget {
@@ -122,12 +123,59 @@ class ProductPage extends StatelessWidget {
               ),
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.h),
                   child: ExpandableText(
                     text: productnotifier.product!.description,
                   ),
                 ),
               ),
+
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.w),
+                  child: Divider(
+                    color: Kolors.kGrayLight,
+                    thickness: .5.h,
+                  ),
+                ),
+              ),
+              // sizes
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: ReusableText(
+                      text: "Selectionner la taille",
+                      style: appStyle(16, Kolors.kDark, FontWeight.w600)),
+                ),
+              ),
+
+              SliverToBoxAdapter(
+                child: SizedBox(height: 10.h),
+              ),
+              // La liste des tailles se trouve dans le fichier product_sizes_widget.dart
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: ReusableText(
+                      text: "Selectionner la couleur",
+                      style: appStyle(16, Kolors.kDark, FontWeight.w600)),
+                ),
+              ),
+
+              SliverToBoxAdapter(
+                child: SizedBox(height: 10.h),
+              ),
+              // Produits similaires pourraient intéresser l'utilisateur
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: ReusableText(
+                      text: "Produits similaires",
+                      style: appStyle(16, Kolors.kDark, FontWeight.w600)),
+                ),
+              ),
+
+              const SliverToBoxAdapter(child: SimilairProducts()),
             ],
           ),
         );
