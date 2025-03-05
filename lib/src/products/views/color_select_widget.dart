@@ -19,9 +19,9 @@ class ColorSelectWidget extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           child: Row(
             children: List.generate(
-              context.read<ProductNotifier>().product!.title.length,
+              context.read<ProductNotifier>().product!.colors.length,
               (i) {
-                String c = context.read<ProductNotifier>().product!.types[i];
+                String c = context.read<ProductNotifier>().product!.colors[i];
                 return GestureDetector(
                   onTap: () {
                     controller.setColor(c);

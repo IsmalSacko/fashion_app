@@ -29,12 +29,15 @@ class ProductSizesWidget extends StatelessWidget {
                         ? Kolors.kPrimary
                         : Kolors.kGrayLight,
                     borderRadius: BorderRadius.circular(5)),
-                child: Center(
-                    child: Text(
-                  textAlign: TextAlign.center,
-                  '${s.replaceAll("pouces", "").trim()}\'\'', // Supprime "pouces" et ajoute deux guillemets simplesÒ
-                  style: appStyle(20, Kolors.kWhite, FontWeight.bold),
-                )),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: Center(
+                      child: Text(
+                    textAlign: TextAlign.center,
+                    s,
+                    style: appStyle(20, Kolors.kWhite, FontWeight.bold),
+                  )),
+                ),
               ),
             );
           }),

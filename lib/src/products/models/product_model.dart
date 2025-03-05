@@ -15,6 +15,7 @@ class Products {
   final String zoneCity;
   final List<String> types;
   final List<String> sizes;
+  final List<String> colors;
   final int zone;
   final String zoneName;
   final bool available;
@@ -30,6 +31,7 @@ class Products {
     required this.zoneCity,
     required this.types,
     required this.sizes,
+    required this.colors,
     required this.zone,
     required this.zoneName,
     required this.available,
@@ -44,7 +46,8 @@ class Products {
         price: json["price"],
         priceInFcfa: json["price_in_fcfa"]?.toDouble(),
         zoneCity: json["zone_city"],
-        types: List<String>.from(json["colors"].map((x) => x)),
+        types: List<String>.from(json["types"].map((x) => x)),
+        colors: List<String>.from(json["colors"].map((x) => x)),
         sizes: List<String>.from(json["sizes"]?.map((x) => x) ?? []),
         zone: json["zone"],
         zoneName: json["zone_name"],
@@ -61,7 +64,8 @@ class Products {
         "price": price,
         "price_in_fcfa": priceInFcfa,
         "zone_city": zoneCity,
-        "colors": List<dynamic>.from(types.map((x) => x)),
+        "types": List<dynamic>.from(types.map((x) => x)),
+        "colors": List<dynamic>.from(colors.map((x) => x)),
         "sizes": List<dynamic>.from(sizes.map((x) => x)),
         "zone": zone,
         "zone_name": zoneName,

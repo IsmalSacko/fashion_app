@@ -9,7 +9,9 @@ import 'package:mobile_shop/common/widgets/back_button.dart';
 import 'package:mobile_shop/common/widgets/reusable_text.dart';
 import 'package:mobile_shop/const/constants.dart';
 import 'package:mobile_shop/src/products/controllers/product_notifier.dart';
+import 'package:mobile_shop/src/products/views/color_select_widget.dart';
 import 'package:mobile_shop/src/products/views/expandable_text.dart';
+import 'package:mobile_shop/src/products/views/product_sizes_widget.dart';
 import 'package:mobile_shop/src/products/views/similair_products.dart';
 import 'package:provider/provider.dart';
 
@@ -148,7 +150,11 @@ class ProductPage extends StatelessWidget {
                       style: appStyle(16, Kolors.kDark, FontWeight.w600)),
                 ),
               ),
-
+              const SliverToBoxAdapter(
+                  child: Padding(
+                padding: EdgeInsets.all(8.0),
+                child: ProductSizesWidget(),
+              )),
               SliverToBoxAdapter(
                 child: SizedBox(height: 10.h),
               ),
@@ -162,9 +168,10 @@ class ProductPage extends StatelessWidget {
                 ),
               ),
 
-              SliverToBoxAdapter(
-                child: SizedBox(height: 10.h),
-              ),
+              // La liste des couleurs se trouve dans le fichier color_select_widget.dart
+              const SliverToBoxAdapter(child: ColorSelectWidget()),
+
+              SliverToBoxAdapter(child: SizedBox(height: 10.h)),
               // Produits similaires pourraient intéresser l'utilisateur
               SliverToBoxAdapter(
                 child: Padding(
@@ -174,7 +181,7 @@ class ProductPage extends StatelessWidget {
                       style: appStyle(16, Kolors.kDark, FontWeight.w600)),
                 ),
               ),
-
+              // La liste des produits similaires se trouve dans le fichier similair_products.dart
               const SliverToBoxAdapter(child: SimilairProducts()),
             ],
           ),
