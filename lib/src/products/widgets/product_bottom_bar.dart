@@ -34,7 +34,7 @@ class ProductBottomBar extends StatelessWidget {
                 ),
                 ReusableText(
                     text: '$prixTotal FCFA',
-                    style: appStyle(14, Kolors.kDark, FontWeight.w700)),
+                    style: appStyle(16, Kolors.kDark, FontWeight.w700)),
               ],
             ),
             SizedBox(

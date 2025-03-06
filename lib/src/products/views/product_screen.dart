@@ -3,17 +3,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:mobile_shop/common/services/storage.dart';
 import 'package:mobile_shop/common/utils/kcolors.dart';
+import 'package:mobile_shop/common/utils/kstrings.dart';
 import 'package:mobile_shop/common/widgets/app_style.dart';
 import 'package:mobile_shop/common/widgets/back_button.dart';
+import 'package:mobile_shop/common/widgets/error_modal.dart';
+import 'package:mobile_shop/common/widgets/login_bottom_sheet.dart';
 import 'package:mobile_shop/common/widgets/reusable_text.dart';
 import 'package:mobile_shop/const/constants.dart';
+import 'package:mobile_shop/src/products/controllers/colors_sizers_notifier.dart';
 import 'package:mobile_shop/src/products/controllers/product_notifier.dart';
 import 'package:mobile_shop/src/products/views/color_select_widget.dart';
 import 'package:mobile_shop/src/products/views/expandable_text.dart';
 import 'package:mobile_shop/src/products/views/product_sizes_widget.dart';
 import 'package:mobile_shop/src/products/views/similair_products.dart';
 import 'package:provider/provider.dart';
+
+import '../widgets/product_bottom_bar.dart';
 
 class ProductPage extends StatelessWidget {
   const ProductPage({super.key, required this.productId});
@@ -23,6 +30,7 @@ class ProductPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //context.read<ProductNotifier>().product?.title;
+    String? accessToken = Storage().getString('accessToken');
     return Consumer<ProductNotifier>(
       builder: (context, productnotifier, child) {
         return Scaffold(
@@ -183,8 +191,36 @@ class ProductPage extends StatelessWidget {
               ),
               // La liste des produits similaires se trouve dans le fichier similair_products.dart
               const SliverToBoxAdapter(child: SimilairProducts()),
+              // SliverToBoxAdapter(
+              //   child: Padding(
+              //     padding: EdgeInsets.symmetric(horizontal: 8.w),
+              //     child: Divider(
+              //       color: Kolors.kGrayLight,
+              //       thickness: .5.h,
+              //     ),
+              //   ),
+              // ),
             ],
           ),
+
+          // Le bouton d'ajout au panier se trouve dans le fichier product_bottom_bar.dart
+          bottomNavigationBar: ProductBottomBar(
+              onPressed: () {
+                if (accessToken == null) {
+                  loginBottomSheet(context);
+                } else {
+                  if (context.read<ColorsSizersNotifier>().colors == '' ||
+                      context.read<ColorsSizersNotifier>().sizes == '') {
+                    showErrorPopup(context, AppText.kCartErrorText,
+                        "Erreur de sélection", true);
+                  } else {
+                    ///TODO: Ajouter au panier
+                    //print('Ajout au panier');
+                  }
+                }
+              },
+              prixTotal:
+                  productnotifier.product!.priceInFcfa.toStringAsFixed(0)),
         );
       },
     );

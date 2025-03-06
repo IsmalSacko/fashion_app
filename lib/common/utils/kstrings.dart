@@ -9,6 +9,8 @@ class AppText {
   static const String kErrorLogin =
       'Opps! Unable to log in with provided credentials.';
   static const String kErrorGetUser = 'Opps! Unable to get user data';
+  static const String kCartErrorText =
+      'Opps! Veiuiillez selectionner la taille et la couleur';
   static const String kVerify = 'Verification Code';
   static const String kVerifyText =
       'Please enter the code we just sent to email';

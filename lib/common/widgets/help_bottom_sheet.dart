@@ -4,6 +4,113 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
+// Future<dynamic> showHelpCenterBottomSheet(BuildContext context) {
+//   return showModalBottomSheet<void>(
+//     context: context,
+//     builder: (BuildContext context) {
+//       return Container(
+//         height: MediaQuery.of(context).size.height * 0.7,
+//         decoration: const BoxDecoration(
+//           color: Colors.white,
+//           borderRadius: BorderRadius.vertical(top: Radius.circular(20.0)),
+//         ),
+//         child: Padding(
+//           padding: const EdgeInsets.all(20.0),
+//           child: Column(
+//             mainAxisSize: MainAxisSize.min,
+//             crossAxisAlignment: CrossAxisAlignment.start,
+//             children: [
+//               Text(
+//                 'Fashion App Help Center',
+//                 style: appStyle(
+//                   18.0,
+//                   Kolors.kPrimary,
+//                   FontWeight.bold,
+//                 ),
+//               ),
+//               SizedBox(height: 10.h),
+
+//               // Information Section
+//               Text(
+//                 'We\'re here to help! Find answers to frequently asked questions or contact our support team.',
+//                 textAlign: TextAlign.center,
+//                 style: appStyle(16.0, Kolors.kDark, FontWeight.normal),
+//               ),
+//               SizedBox(height: 15.h),
+
+//               // FAQ Section (Replace with actual FAQs)
+//               const Text(
+//                 'FAQs:',
+//                 style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+//               ),
+//               const SizedBox(height: 5.0),
+//               ListTile(
+//                 contentPadding: EdgeInsets.zero,
+//                 title: const Text('Can I return an item?'),
+//                 trailing: const Icon(
+//                   Icons.keyboard_arrow_right,
+//                   color: Kolors.kGray,
+//                 ),
+//                 onTap: () {
+//                   // Handle FAQ tap (open details page or show answer)
+//                 },
+//               ),
+//               ListTile(
+//                 contentPadding: EdgeInsets.zero,
+//                 title: const Text('How do I track my order?'),
+//                 trailing: const Icon(
+//                   Icons.keyboard_arrow_right,
+//                   color: Kolors.kGray,
+//                 ),
+//                 onTap: () {
+//                   // Handle FAQ tap (open details page or show answer)
+//                 },
+//               ),
+
+//               const SizedBox(height: 15.0),
+
+//               // Contact Section
+//               const Text(
+//                 'Contact Us:',
+//                 style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+//               ),
+//               SizedBox(height: 10.h),
+//               const Row(
+//                 children: [
+//                   Icon(MaterialCommunityIcons.email_outline),
+//                   SizedBox(width: 10.0),
+//                   Text(
+//                     'support@fashionapp.com',
+//                     style: TextStyle(fontSize: 16.0),
+//                   ),
+//                 ],
+//               ),
+//               SizedBox(height: 20.h),
+
+//               const Row(
+//                 children: [
+//                   Icon(MaterialCommunityIcons.phone_outline),
+//                   SizedBox(width: 10.0),
+//                   Text(
+//                     '+860000000000',
+//                     style: TextStyle(fontSize: 16.0),
+//                   ),
+//                 ],
+//               ),
+
+//               SizedBox(height: 20.h),
+
+//               ElevatedButton(
+//                 onPressed: () {},
+//                 child: const Text('Visit Full Help Center'),
+//               ),
+//             ],
+//           ),
+//         ),
+//       );
+//     },
+//   );
+// }
 Future<dynamic> showHelpCenterBottomSheet(BuildContext context) {
   return showModalBottomSheet<void>(
     context: context,
@@ -14,97 +121,100 @@ Future<dynamic> showHelpCenterBottomSheet(BuildContext context) {
           color: Colors.white,
           borderRadius: BorderRadius.vertical(top: Radius.circular(20.0)),
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Fashion App Help Center',
-                style: appStyle(
-                  18.0,
-                  Kolors.kPrimary,
-                  FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 10.h),
-
-              // Information Section
-              Text(
-                'We\'re here to help! Find answers to frequently asked questions or contact our support team.',
-                textAlign: TextAlign.center,
-                style: appStyle(16.0, Kolors.kDark, FontWeight.normal),
-              ),
-              SizedBox(height: 15.h),
-
-              // FAQ Section (Replace with actual FAQs)
-              const Text(
-                'FAQs:',
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 5.0),
-              ListTile(
-                contentPadding: EdgeInsets.zero,
-                title: const Text('Can I return an item?'),
-                trailing: const Icon(
-                  Icons.keyboard_arrow_right,
-                  color: Kolors.kGray,
-                ),
-                onTap: () {
-                  // Handle FAQ tap (open details page or show answer)
-                },
-              ),
-              ListTile(
-                contentPadding: EdgeInsets.zero,
-                title: const Text('How do I track my order?'),
-                trailing: const Icon(
-                  Icons.keyboard_arrow_right,
-                  color: Kolors.kGray,
-                ),
-                onTap: () {
-                  // Handle FAQ tap (open details page or show answer)
-                },
-              ),
-
-              const SizedBox(height: 15.0),
-
-              // Contact Section
-              const Text(
-                'Contact Us:',
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 10.h),
-              const Row(
-                children: [
-                  Icon(MaterialCommunityIcons.email_outline),
-                  SizedBox(width: 10.0),
-                  Text(
-                    'support@fashionapp.com',
-                    style: TextStyle(fontSize: 16.0),
+        child: SingleChildScrollView(
+          // Ajout de SingleChildScrollView ici
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Centre d\'aide de SACKO Services',
+                  style: appStyle(
+                    18.0,
+                    Kolors.kPrimary,
+                    FontWeight.bold,
                   ),
-                ],
-              ),
-              SizedBox(height: 20.h),
+                ),
+                SizedBox(height: 10.h),
 
-              const Row(
-                children: [
-                  Icon(MaterialCommunityIcons.phone_outline),
-                  SizedBox(width: 10.0),
-                  Text(
-                    '+860000000000',
-                    style: TextStyle(fontSize: 16.0),
+                // Section Informations
+                Text(
+                  'Nous sommes là pour vous aider ! Trouvez des réponses aux questions fréquemment posées ou contactez notre équipe de support.',
+                  textAlign: TextAlign.center,
+                  style: appStyle(16.0, Kolors.kDark, FontWeight.normal),
+                ),
+                SizedBox(height: 15.h),
+
+                // Section FAQ
+                const Text(
+                  'FAQs :',
+                  style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 5.0),
+                ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  title: const Text('Puis-je retourner un article ?'),
+                  trailing: const Icon(
+                    Icons.keyboard_arrow_right,
+                    color: Kolors.kGray,
                   ),
-                ],
-              ),
+                  onTap: () {
+                    // Gérer le clic sur la FAQ (ouvrir une page de détails ou afficher la réponse)
+                  },
+                ),
+                ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  title: const Text('Comment suivre ma commande ?'),
+                  trailing: const Icon(
+                    Icons.keyboard_arrow_right,
+                    color: Kolors.kGray,
+                  ),
+                  onTap: () {
+                    // Gérer le clic sur la FAQ (ouvrir une page de détails ou afficher la réponse)
+                  },
+                ),
 
-              SizedBox(height: 20.h),
+                const SizedBox(height: 15.0),
 
-              ElevatedButton(
-                onPressed: () {},
-                child: const Text('Visit Full Help Center'),
-              ),
-            ],
+                // Section Contact
+                const Text(
+                  'Contactez-nous :',
+                  style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 10.h),
+                const Row(
+                  children: [
+                    Icon(MaterialCommunityIcons.email_outline),
+                    SizedBox(width: 10.0),
+                    Text(
+                      'support@sackoservices.com',
+                      style: TextStyle(fontSize: 16.0),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20.h),
+
+                const Row(
+                  children: [
+                    Icon(MaterialCommunityIcons.phone_outline),
+                    SizedBox(width: 10.0),
+                    Text(
+                      '+223 73 13 13 67 89',
+                      style: TextStyle(fontSize: 16.0),
+                    ),
+                  ],
+                ),
+
+                SizedBox(height: 20.h),
+
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const Text("Visitez le centre d'aide complet"),
+                ),
+              ],
+            ),
           ),
         ),
       );
