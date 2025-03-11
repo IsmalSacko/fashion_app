@@ -1,6 +1,6 @@
-/*
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile_shop/src/auth/controllers/password_notifier.dart';
 import 'package:provider/provider.dart';
 
 import '../utils/kcolors.dart';
@@ -41,7 +41,7 @@ class PasswordField extends StatelessWidget {
             decoration: InputDecoration(
               suffixIcon: GestureDetector(
                 onTap: () {
-                  passwordNotifier.toogle();
+                  passwordNotifier.setPassword();
                 },
                 child: Icon(
                   passwordNotifier.password
@@ -95,4 +95,3 @@ class PasswordField extends StatelessWidget {
     );
   }
 }
-*/

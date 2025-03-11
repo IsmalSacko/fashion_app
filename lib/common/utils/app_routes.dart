@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:mobile_shop/src/auth/views/registration_sreen.dart';
 import 'package:mobile_shop/src/categories/views/categories_page.dart';
 import 'package:mobile_shop/src/categories/views/category_page.dart';
+import 'package:mobile_shop/src/frofile/views/order_screen.dart';
+import 'package:mobile_shop/src/frofile/views/policy_screen.dart';
+import 'package:mobile_shop/src/frofile/views/shipping_adress_screen.dart';
 import 'package:mobile_shop/src/notification/views/notification_screen.dart';
 import 'package:mobile_shop/src/products/views/product_screen.dart';
 import 'package:mobile_shop/src/search/views/search_screen.dart';
@@ -30,6 +34,9 @@ final GoRouter _router = GoRouter(
       builder: (context, state) => const OnBoardingScreen(),
     ),
     GoRoute(
+        path: '/register',
+        builder: (context, state) => const RegistrationPage()),
+    GoRoute(
       path: '/login',
       builder: (context, state) => const LoginPage(),
     ),
@@ -56,14 +63,22 @@ final GoRouter _router = GoRouter(
         return ProductPage(productId: productId.toString());
       },
     ),
+    GoRoute(
+      path: '/policy',
+      builder: (context, state) => const PolicyScreen(),
+    ),
+    GoRoute(
+      path: '/addresses',
+      builder: (context, state) => const ShippingAdressScreen(),
+    ),
+    GoRoute(
+      path: '/orders',
+      builder: (context, state) => const OrderScreen(),
+    ),
     /*
     GoRoute(
       path: '/review',
       builder: (context, state) => const ReviewsPage(),
-    ),
-    GoRoute(
-      path: '/policy',
-      builder: (context, state) => const PolicyPage(),
     ),
     GoRoute(
       path: '/verification',
@@ -73,10 +88,6 @@ final GoRouter _router = GoRouter(
     GoRoute(
       path: '/help',
       builder: (context, state) => const HelpCenterPage(),
-    ),
-    GoRoute(
-      path: '/orders',
-      builder: (context, state) => const OrdersPage(),
     ),
 
     GoRoute(
@@ -91,10 +102,6 @@ final GoRouter _router = GoRouter(
       builder: (context, state) => const AddAddress(),
     ),
 
-    GoRoute(
-      path: '/addresses',
-      builder: (context, state) => const AddressesListPage(),
-    ),
 
 
 
