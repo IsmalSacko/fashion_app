@@ -7,7 +7,6 @@ import 'package:mobile_shop/common/widgets/back_button.dart';
 import 'package:mobile_shop/common/widgets/custom_button.dart';
 import 'package:mobile_shop/common/widgets/email_textfield.dart';
 import 'package:mobile_shop/common/widgets/password_field.dart';
-import 'package:mobile_shop/const/resource.dart';
 import 'package:mobile_shop/src/auth/controllers/auth_notifier.dart';
 import 'package:mobile_shop/src/auth/models/registration_model.dart';
 import 'package:provider/provider.dart';
@@ -52,11 +51,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
       body: ListView(
         children: [
           SizedBox(height: 160.h),
-          Text("Meilleurs prix garantis",
+          Text("Sacko Services",
               style: appStyle(24, Kolors.kPrimary, FontWeight.bold),
               textAlign: TextAlign.center),
           SizedBox(height: 20.h),
-          Text("Hey, Bon retour parmi nous, vous nous avez manqué",
+          Text("Hey, Bienvenue chez Sacko Services",
               style: appStyle(13, Kolors.kGray, FontWeight.normal),
               textAlign: TextAlign.center),
           SizedBox(height: 25.h),

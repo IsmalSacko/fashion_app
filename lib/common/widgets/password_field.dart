@@ -12,11 +12,13 @@ class PasswordField extends StatelessWidget {
     required this.controller,
     this.focusNode,
     this.radius,
+    this.hintText,
   }) : super(key: key);
 
   final TextEditingController controller;
   final FocusNode? focusNode;
   final double? radius;
+  final String? hintText;
   @override
   Widget build(BuildContext context) {
     return Consumer<PasswordNotifier>(
@@ -50,7 +52,7 @@ class PasswordField extends StatelessWidget {
                   color: Kolors.kGrayLight,
                 ),
               ),
-              hintText: 'Password ',
+              hintText: hintText,
               prefixIcon: const Icon(
                 CupertinoIcons.lock_circle,
                 color: Kolors.kGrayLight,
