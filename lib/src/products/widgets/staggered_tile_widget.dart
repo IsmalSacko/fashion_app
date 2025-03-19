@@ -8,6 +8,7 @@ import 'package:mobile_shop/common/widgets/app_style.dart';
 import 'package:mobile_shop/common/widgets/reusable_text.dart';
 import 'package:mobile_shop/src/products/controllers/product_notifier.dart';
 import 'package:mobile_shop/src/products/models/product_model.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 class StaggeredTileWidget extends StatelessWidget {
@@ -24,6 +25,8 @@ class StaggeredTileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final formatter = NumberFormat("#,##0", "fr_FR");
+    const double tauxDeConversion = 655.96;
     return GestureDetector(
       onTap: () {
         context.read<ProductNotifier>().setProduct(product);
@@ -34,15 +37,18 @@ class StaggeredTileWidget extends StatelessWidget {
         child: Container(
           color: Kolors.kOffWhite,
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               Container(
+                margin: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w)
+                    .copyWith(bottom: 0),
                 alignment: Alignment.center,
-                height: MediaQuery.of(context).size.width / 2 * 0.75,
+                height: MediaQuery.of(context).size.width / 2.1 * 0.7,
                 color: Kolors.kPrimary,
                 child: Stack(
                   children: [
                     CachedNetworkImage(
-                      imageUrl: product.image[0],
+                      imageUrl: product.imageUrls[0],
                       fit: BoxFit.cover,
                       width: double.infinity,
                       height: double.infinity,
@@ -89,7 +95,7 @@ class StaggeredTileWidget extends StatelessWidget {
                           ),
                           SizedBox(
                             child: Text(
-                              product.ratings.toString(),
+                              product.rating.toString(),
                               style:
                                   appStyle(13, Kolors.kGray, FontWeight.normal),
                             ),
@@ -103,9 +109,17 @@ class StaggeredTileWidget extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 2.w),
                 child: ReusableText(
-                  text: '${product.priceInFcfa.toStringAsFixed(0)} FCFA',
-                  style: appStyle(17, Kolors.kPrimaryLight, FontWeight.w500),
+                  // Il faut convertir le prix en FCFA
+                  text:
+                      '${formatter.format(((product.price * tauxDeConversion) / 100).round() * 100)} FCFA',
+                  // text: '${formatter.format(product.price)} FCFA',
+                  //text: '${product.price.toStringAsFixed(0)} FCFA',
+                  style: appStyle(14, Kolors.kPrimaryLight, FontWeight.w500),
                 ),
+              ),
+              Text(
+                '${product.price} €',
+                style: appStyle(10, Kolors.kGray, FontWeight.normal),
               ),
             ],
           ),

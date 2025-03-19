@@ -66,15 +66,15 @@ class ProductPage extends StatelessWidget {
                       child: ImageSlideshow(
                         indicatorColor: Kolors.kPrimaryLight,
                         autoPlayInterval: 15000,
-                        isLoop: productnotifier.product!.image.length > 1
+                        isLoop: productnotifier.product!.imageUrls.length > 1
                             ? true
                             : false,
                         children: List.generate(
-                            productnotifier.product!.image.length, (i) {
+                            productnotifier.product!.imageUrls.length, (i) {
                           return CachedNetworkImage(
                             placeholder: placeholder,
                             errorWidget: errorWidget,
-                            imageUrl: productnotifier.product!.image[i],
+                            imageUrl: productnotifier.product!.imageUrls[i],
                             fit: BoxFit.cover,
                           );
                         }),
@@ -92,8 +92,8 @@ class ProductPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         ReusableText(
-                            text: productnotifier.product!.types
-                                .join('-')
+                            text: productnotifier.product!.productType
+                                .toString()
                                 .toUpperCase(),
                             style: appStyle(13, Kolors.kGray, FontWeight.w600)),
                         Row(
@@ -106,7 +106,7 @@ class ProductPage extends StatelessWidget {
                             SizedBox(width: 5.w),
                             SizedBox(
                               child: ReusableText(
-                                text: productnotifier.product!.ratings
+                                text: productnotifier.product!.rating
                                     .toStringAsFixed(1),
                                 style: appStyle(
                                     13, Kolors.kGray, FontWeight.normal),
@@ -219,8 +219,7 @@ class ProductPage extends StatelessWidget {
                   }
                 }
               },
-              prixTotal:
-                  productnotifier.product!.priceInFcfa.toStringAsFixed(0)),
+              prixTotal: productnotifier.product!.price.toStringAsFixed(0)),
         );
       },
     );

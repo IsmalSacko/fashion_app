@@ -75,66 +75,31 @@ List<Categories> categories = [
   Categories(
     id: 1,
     title: "Iphone",
-    description: "Iphone 12 pro max 256Go",
-    price: "190.56",
-    priceInFcfa: 124999.16592,
-    zoneCity: "Kamako",
-    zone: 1,
-    zoneName: "Kalaban-coura",
-    available: true,
-    image:
-        "https://d3jks2a8ttfomr.cloudfront.net/articles/meilleur-cellulaire-24-2.webp",
+    imageUrl:
+        "https://www.jaclem.com/53321-large_default/smartphone-samsung-a06-464g-noir.jpg",
   ),
   Categories(
     id: 2,
     title: "Android",
-    description: "Téléphone ",
-    price: "600.00",
-    priceInFcfa: 393574.2,
-    zoneCity: "Kamako",
-    zone: 5,
-    zoneName: "Hamdalaye ACI",
-    available: true,
-    image:
+    imageUrl:
         "https://www.jaclem.com/53321-large_default/smartphone-samsung-a06-464g-noir.jpg",
   ),
   Categories(
     id: 3,
     title: "Ecouteur",
-    description: "Iphone 11 pro max 256Go",
-    price: "763.00",
-    priceInFcfa: 500495.191,
-    zoneCity: "Kamako",
-    zone: 5,
-    zoneName: "Hamdalaye ACI",
-    available: true,
-    image:
+    imageUrl:
         "https://images.frandroid.com/wp-content/uploads/2023/04/try-galaxy-iphone.jpg",
   ),
   Categories(
     id: 4,
     title: "Batterie",
-    description: "Samsung Galaxy S5 G900F",
-    price: "763.00",
-    priceInFcfa: 500495.191,
-    zoneCity: "Kamako",
-    zone: 1,
-    zoneName: "Kalaban-coura",
-    available: true,
-    image:
+    imageUrl:
         "https://static.fnac-static.com/multimedia/Images/D7/D7/BC/D6/14073047-3-1520-1/tsp20200213132359/Samsung-Galaxy-S5-G900F-16Go-16MP-Debloque-5-1-pouces-ecran-tactile-telephone-portable-blanc.jpg",
   ),
   Categories(
     id: 5,
     title: "Samsung",
-    description: "Samsung Galaxy S6 ",
-    price: "763.00",
-    priceInFcfa: 500495.191,
-    zoneCity: "Kamako",
-    zone: 1,
-    zoneName: "Kalaban-coura",
-    available: true,
-    image:
+    imageUrl:
         "https://static.fnac-static.com/multimedia/Images/D7/D7/BC/D6/14073047-3-1520-1/tsp20200213132359/Samsung-Galaxy-S5-G900F-16Go-16MP-Debloque-5-1-pouces-ecran-tactile-telephone-portable-blanc.jpg",
   ),
 ];
@@ -312,25 +277,9 @@ List<Products> products = [
     id: 1,
     title: "Iphone",
     description: '''
-              L'iPhone 11 Pro Max est un smartphone haut de gamme d'Apple, offrant des performances puissantes, un design élégant et une grande capacité de stockage. Avec ses 256 Go, il est idéal pour stocker des photos, vidéos, applications et fichiers sans souci d’espace.
-
-              Caractéristiques principales :
-              - Écran : Super Retina XDR OLED de 6,5 pouces avec des couleurs vibrantes et des noirs profonds.
-              - Capacité : 256 Go de stockage pour tous vos fichiers multimédias.
-              - Performances : Puce A13 Bionic pour une expérience rapide et fluide.
-              - Caméra : Triple appareil photo (Ultra grand-angle, Grand-angle, Téléobjectif) pour des photos et vidéos de qualité professionnelle.
-              - Autonomie : Batterie longue durée avec recharge rapide et sans fil.
-              - Design : Boîtier en acier inoxydable, résistant à l’eau et à la poussière (certifié IP68).
-
-              Idéal pour :
-              - Les amateurs de photographie et de vidéos.
-              - Ceux qui ont besoin d’un espace de stockage généreux.
-              - Les utilisateurs exigeants recherchant un smartphone durable et élégant.
-''',
-    price: "190.56",
-    priceInFcfa: 620000,
-    zoneCity: "Kamako",
-    types: ["Apple", "Ios", "Iphone"],
+      L'iPhone 11 Pro Max est un smartphone haut de gamme d'Apple, offrant des performances puissantes, un design élégant et une grande capacité de stockage. Avec ses 256 Go, il est idéal pour stocker des photos, vidéos, applications et fichiers sans souci d’espace.
+    ''',
+    price: 190.56,
     sizes: ["7", "8", "9", "10", "11"],
     colors: [
       "Noir Carbone 🖤",
@@ -342,139 +291,95 @@ List<Products> products = [
       "Or Rose 🌹",
       "Bleu Pacifique 🌊",
     ],
-
-    zone: 1,
-    zoneName: "Kalaban-coura",
-    available: true,
-    image: [
-      "https://d3jks2a8ttfomr.cloudfront.net/articles/meilleur-cellulaire-24-2.webp",
+    imageUrls: [
       "https://d3jks2a8ttfomr.cloudfront.net/articles/meilleur-cellulaire-24-2.webp",
       "https://d3jks2a8ttfomr.cloudfront.net/articles/meilleur-cellulaire-24-2.webp",
     ],
-
-    ratings: 4.5, // Ajout des évaluations
+    rating: 4.5,
+    isFeatured: false,
+    productModel: "11 Pro Max",
+    productType: "Smartphone",
+    createdAt: DateTime.now(),
+    updatedAt: DateTime.now(),
+    category: 1,
+    marque: 1,
   ),
   Products(
     id: 2,
-    title: "Android",
-    description: "Téléphone ",
-    price: "600.00",
-    priceInFcfa: 390000,
-    zoneCity: "Kamako",
-    types: ["Android", "Samsung", "Smartphone"],
+    title: "Samsung A06",
+    description: "Téléphone Samsung A06 avec écran HD et bonne autonomie.",
+    price: 600.00,
     sizes: ["7", "8", "9", "10", "11"],
-    colors: [
-      "Noir Carbone 🖤",
-      "Gris Sidéral 🌑",
-      "Bleu Nuit 🔵",
-      "Vert Forêt 🌿",
-      "Or 🟡",
-      "Argent ⚪",
-      "Or Rose 🌹",
-      "Bleu Pacifique 🌊",
-    ],
-
-    zone: 5,
-    zoneName: "Hamdalaye ACI",
-    available: true,
-    image: [
-      "https://www.jaclem.com/53321-large_default/smartphone-samsung-a06-464g-noir.jpg",
+    colors: ["Noir", "Blanc", "Bleu"],
+    imageUrls: [
       "https://www.jaclem.com/53321-large_default/smartphone-samsung-a06-464g-noir.jpg",
       "https://www.jaclem.com/53321-large_default/smartphone-samsung-a06-464g-noir.jpg",
     ],
-
-    ratings: 4.0, // Ajout des évaluations
+    rating: 4.0,
+    isFeatured: true,
+    productModel: "A06",
+    productType: "Smartphone",
+    createdAt: DateTime.now(),
+    updatedAt: DateTime.now(),
+    category: 5,
+    marque: 2,
   ),
   Products(
     id: 3,
-    title: "Ecouteur",
-    description: '''
-              L'iPhone 11 Pro Max est un smartphone haut de gamme d'Apple, offrant des performances puissantes, un design élégant et une grande capacité de stockage. Avec ses 256 Go, il est idéal pour stocker des photos, vidéos, applications et fichiers sans souci d’espace.
-
-              Caractéristiques principales :
-              - Écran : Super Retina XDR OLED de 6,5 pouces avec des couleurs vibrantes et des noirs profonds.
-              - Capacité : 256 Go de stockage pour tous vos fichiers multimédias.
-              - Performances : Puce A13 Bionic pour une expérience rapide et fluide.
-              - Caméra : Triple appareil photo (Ultra grand-angle, Grand-angle, Téléobjectif) pour des photos et vidéos de qualité professionnelle.
-              - Autonomie : Batterie longue durée avec recharge rapide et sans fil.
-              - Design : Boîtier en acier inoxydable, résistant à l’eau et à la poussière (certifié IP68).
-
-              Idéal pour :
-              - Les amateurs de photographie et de vidéos.
-              - Ceux qui ont besoin d’un espace de stockage généreux.
-              - Les utilisateurs exigeants recherchant un smartphone durable et élégant.
-''',
-    price: "763.00",
-    priceInFcfa: 545000,
-    zoneCity: "Kamako",
-    types: [
-      "Ecouteur",
-      "Iphone",
-    ],
-    sizes: ["7", "8", "9", "10", "11"],
-    colors: [
-      "Noir Carbone 🖤",
-      "Gris Sidéral 🌑",
-      "Bleu Nuit 🔵",
-      "Vert Forêt 🌿",
-      "Or 🟡",
-      "Argent ⚪",
-      "Or Rose 🌹",
-      "Bleu Pacifique 🌊",
-    ],
-
-    zone: 5,
-    zoneName: "Hamdalaye ACI",
-    available: true,
-    image: [
+    title: "Écouteurs sans fil",
+    description: "Écouteurs Bluetooth avec réduction de bruit active.",
+    price: 50.99,
+    sizes: [],
+    colors: ["Noir", "Blanc"],
+    imageUrls: [
       "https://www.shutterstock.com/image-vector/vector-illustration-set-smartphone-accessories-600nw-1145418938.jpg",
       "https://www.shutterstock.com/image-vector/vector-illustration-set-smartphone-accessories-600nw-1145418938.jpg",
     ],
-    ratings: 3.8, // Ajout des évaluations
+    rating: 3.8,
+    isFeatured: false,
+    productModel: "AirPods Pro",
+    productType: "Accessoire",
+    createdAt: DateTime.now(),
+    updatedAt: DateTime.now(),
+    category: 3,
+    marque: 3,
   ),
-  // Products(
-  //   id: 4,
-  //   title: "Batterie",
-  //   description: "Samsung Galaxy S5 G900F",
-  //   price: "763.00",
-  //   priceInFcfa: 500495.191,
-  //   zoneCity: "Kamako",
-  //   colors: ["black", "white", "red"],
-  //   zone: 1,
-  //   zoneName: "Kalaban-coura",
-  //   available: true,
-  //   image:
-  //       "https://www.batteriesmontgallet.com/images/smartphones_telephones_mobiles_batteries.png",
-  //   ratings: 4.2, // Ajout des évaluations
-  // ),
+  Products(
+    id: 4,
+    title: "Batterie Externe 20 000mAh",
+    description: "Batterie externe rapide avec USB-C et charge sans fil.",
+    price: 29.99,
+    sizes: [],
+    colors: ["Noir", "Rouge"],
+    imageUrls: [
+      "https://www.batteriesmontgallet.com/images/smartphones_telephones_mobiles_batteries.png",
+    ],
+    rating: 4.2,
+    isFeatured: true,
+    productModel: "20k mAh",
+    productType: "Accessoire",
+    createdAt: DateTime.now(),
+    updatedAt: DateTime.now(),
+    category: 4,
+    marque: 4,
+  ),
   Products(
     id: 5,
-    title: "Samsung",
-    description: "Samsung Galaxy S6 ",
-    price: "763.00",
-    priceInFcfa: 540000,
-    zoneCity: "Kamako",
-    types: ["Android", "Samsung", "Smartphone"],
-    sizes: ["7", "8", "9", "10", "11"],
-    colors: [
-      "Noir Carbone 🖤",
-      "Gris Sidéral 🌑",
-      "Bleu Nuit 🔵",
-      "Vert Forêt 🌿",
-      "Or 🟡",
-      "Argent ⚪",
-      "Or Rose 🌹",
-      "Bleu Pacifique 🌊",
-    ],
-
-    zone: 1,
-    zoneName: "Kalaban-coura",
-    available: true,
-    image: [
-      "https://static.fnac-static.com/multimedia/Images/D7/D7/BC/D6/14073047-3-1520-1/tsp20200213132359/Samsung-Galaxy-S5-G900F-16Go-16MP-Debloque-5-1-pouces-ecran-tactile-telephone-portable-blanc.jpg",
+    title: "Samsung Galaxy S6",
+    description: "Smartphone Samsung Galaxy S6 avec écran AMOLED.",
+    price: 763.00,
+    sizes: ["7", "8", "9", "10"],
+    colors: ["Bleu", "Blanc"],
+    imageUrls: [
       "https://static.fnac-static.com/multimedia/Images/D7/D7/BC/D6/14073047-3-1520-1/tsp20200213132359/Samsung-Galaxy-S5-G900F-16Go-16MP-Debloque-5-1-pouces-ecran-tactile-telephone-portable-blanc.jpg",
     ],
-
-    ratings: 4.7, // Ajout des évaluations
+    rating: 4.7,
+    isFeatured: false,
+    productModel: "S6",
+    productType: "Smartphone",
+    createdAt: DateTime.now(),
+    updatedAt: DateTime.now(),
+    category: 5,
+    marque: 2,
   ),
 ];

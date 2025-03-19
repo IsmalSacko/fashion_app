@@ -1,20 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mobile_shop/common/utils/kcolors.dart';
 import 'package:mobile_shop/common/widgets/app_style.dart';
 import 'package:mobile_shop/common/widgets/reusable_text.dart';
-import 'package:mobile_shop/const/constants.dart';
+import 'package:mobile_shop/common/widgets/shimmers/categories_shimmer.dart';
 import 'package:mobile_shop/src/categories/controllers/category_notifier.dart';
+import 'package:mobile_shop/src/categories/hook/fetch_home_categories.dart';
 import 'package:provider/provider.dart';
 
-class HomeCategoriesList extends StatelessWidget {
+class HomeCategoriesList extends HookWidget {
   const HomeCategoriesList({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final results = fetchHomeCategories();
+    final categories = results.categories;
+    final loading = results.isLoading;
+    //final error = results.error;
+
+    if (loading) {
+      return const CatergoriesShimmer();
+    }
     return Padding(
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
         child: SizedBox(
           height: 80.h,
           child: Row(
@@ -38,7 +48,7 @@ class HomeCategoriesList extends StatelessWidget {
                           backgroundColor: Kolors.kSecondaryLight,
                           child: Padding(
                             padding: EdgeInsets.all(4.h),
-                            child: Image.network(category.image,
+                            child: Image.network(category.imageUrl,
                                 width: 40.w, height: 40.h),
                           ),
                         ),
